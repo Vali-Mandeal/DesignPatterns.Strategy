@@ -31,7 +31,7 @@ namespace DesignPatterns.Strategy.V2
             return Console.ReadLine();
         }
 
-        private static StrategyCollection GetStrategyType()
+        private static StrategyTypes GetStrategyType()
         {
             Console.WriteLine(@"Choose a transportation method:
 0 - Air
@@ -41,7 +41,7 @@ namespace DesignPatterns.Strategy.V2
 ");
 
             var choice = Convert.ToInt32(Console.ReadLine());
-            return (StrategyCollection)choice;
+            return (StrategyTypes)choice;
         }
 
     }

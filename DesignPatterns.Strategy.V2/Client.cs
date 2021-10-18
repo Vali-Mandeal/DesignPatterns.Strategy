@@ -25,10 +25,12 @@ namespace DesignPatterns.Strategy.V2
                 new WalkStrategy()
             };
         }
-        public void CallOneStrategy(StrategyCollection type, string origin, string destination)
+        public void CallOneStrategy(StrategyTypes type, string origin, string destination)
         {
             IContext context = new Context();
 
+            // query witch one of the strategies satisfies the condition
+            // this way we get rid of long conditional statements
             context.SetStrategy(_strategies.First(st => st.IsApplyingTo(type)));
             context.ExecuteStrategy(origin, destination);
         }

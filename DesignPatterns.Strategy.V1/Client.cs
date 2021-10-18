@@ -10,29 +10,29 @@ namespace DesignPatterns.Strategy.V1
 
     public class Client
     {
-        public void CallOneStrategy(StrategyCollection type, string origin, string destination)
+        public void CallOneStrategy(StrategyTypes types, string origin, string destination)
         {
             IContext context = new Context();
 
-            SetStrategy(type, context);
+            SetStrategy(types, context);
             context.ExecuteStrategy(origin, destination);
         }
 
-        private static void SetStrategy(StrategyCollection type, IContext context)
+        private static void SetStrategy(StrategyTypes types, IContext context)
         {
             // for simplicity I used a switch to set different strategies
-            switch (type)
+            switch (types)
             {
-                case StrategyCollection.Air:
+                case StrategyTypes.Air:
                     context.SetStrategy(new AirTransportStrategy());
                     break;
-                case StrategyCollection.Private:
+                case StrategyTypes.Private:
                     context.SetStrategy(new PrivateTransportStrategy());
                     break;
-                case StrategyCollection.Public:
+                case StrategyTypes.Public:
                     context.SetStrategy(new PublicTransportStrategy());
                     break;
-                case StrategyCollection.Walk:
+                case StrategyTypes.Walk:
                     context.SetStrategy(new WalkStrategy());
                     break;
             }

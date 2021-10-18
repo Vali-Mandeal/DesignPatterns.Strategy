@@ -7,7 +7,7 @@
     public interface IStrategy
     {
         void Execute(string origin, string destination);
-        public bool IsApplyingTo(StrategyCollection type);
+        public bool IsApplyingTo(StrategyTypes type);
     }
 }
     

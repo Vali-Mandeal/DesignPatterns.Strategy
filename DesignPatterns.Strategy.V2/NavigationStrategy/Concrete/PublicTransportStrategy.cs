@@ -12,9 +12,9 @@ namespace DesignPatterns.Strategy.V2.NavigationStrategy.Concrete
             Console.WriteLine($"Generated a public transport strategy from point {origin} to {destination}");
         }
 
-        public bool IsApplyingTo(StrategyCollection type)
+        public bool IsApplyingTo(StrategyTypes type)
         {
-            return type == StrategyCollection.Public;
+            return type == StrategyTypes.Public;
         }
     }
 }
